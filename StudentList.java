@@ -18,17 +18,16 @@ public class StudentList {
 			System.out.println("Data Loaded.");
 		}
 		else if(args[0].equals("r")) 
-		{
+	  	{
 			System.out.println("Loading data ...");			
 			try {
 			BufferedReader s = new BufferedReader(
 					new InputStreamReader(
 							new FileInputStream("students.txt"))); 
 			String r = s.readLine();
-			System.out.println(r);
-			String i[] = r.split(",");	
+			String i[] = r.split(",");
 			Random x = new Random();
-				int y = x.nextInt();
+				int y = x.nextInt(i.length);
 					System.out.println(i[y]);
 			} catch (Exception e){} 
 			System.out.println("Data Loaded.");			
@@ -78,16 +77,14 @@ public class StudentList {
 							new FileInputStream("students.txt"))); 
 			String D = s.readLine();
 			char a[] = D.toCharArray();			
-			boolean in_word = false;
-			int count=0;
+			int count=1;
 			for(char c:a) {
 				if(c ==' ') 
 				{
-					if (!in_word) {	count++; in_word =true;	}
-					else { in_word=false;}			
+					count++;		
 				}
 			}
-			System.out.println(count +" word(s) found " + a.length);
+			System.out.println(count +" word(s) found ");
 			} catch (Exception e){} 
 			System.out.println("Data Loaded.");				
 		}
