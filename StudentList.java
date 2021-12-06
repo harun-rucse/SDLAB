@@ -6,6 +6,12 @@ public class StudentList {
 	public static void main(String[] args) {
 
 		// Check arguments
+
+		if (!args[0].equals("a") && !args[0].equals("r") && !args[0].contains("+") && !args[0].contains("?")
+				&& !args[0].contains("c")) {
+			System.exit(0);
+		}
+
 		if (args[0].equals("a")) {
 			System.out.println("Loading data ...");
 			try {
