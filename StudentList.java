@@ -28,6 +28,8 @@ public class StudentList {
 
 	public static void main(String[] args) {
 
+		Constants constant = new Constants();
+
 		// Check arguments
 
 		if (!args[0].equals("a") && !args[0].equals("r") && !args[0].contains("+") && !args[0].contains("?")
@@ -36,7 +38,7 @@ public class StudentList {
 		}
 
 		if (args[0].equals("a")) {
-			System.out.println("Loading data ...");
+			System.out.println(constant.loading);
 
 			String textFile = readInput();
 			String students[] = textFile.split(",");
@@ -44,18 +46,18 @@ public class StudentList {
 				System.out.println(student);
 			}
 
-			System.out.println("Data Loaded.");
+			System.out.println(constant.loaded);
 		} else if (args[0].equals("r")) {
-			System.out.println("Loading data ...");
+			System.out.println(constant.loading);
 			String textFile = readInput();
 			String students[] = textFile.split(",");
 			Random rand = new Random();
 			int randNum = rand.nextInt(students.length);
 			System.out.println(students[randNum]);
 
-			System.out.println("Data Loaded.");
+			System.out.println(constant.loaded);
 		} else if (args[0].contains("+")) {
-			System.out.println("Loading data ...");
+			System.out.println(constant.loading);
 
 			String inputText = args[0].substring(1);
 			Date date = new Date();
@@ -64,9 +66,9 @@ public class StudentList {
 			String formatDate = dateFormat.format(date);
 			writeInput(inputText, formatDate);
 
-			System.out.println("Data Loaded.");
+			System.out.println(constant.loaded);
 		} else if (args[0].contains("?")) {
-			System.out.println("Loading data ...");
+			System.out.println(constant.loading);
 			String textFile = readInput();
 			String students[] = textFile.split(",");
 			boolean done = false;
@@ -78,9 +80,9 @@ public class StudentList {
 				}
 			}
 
-			System.out.println("Data Loaded.");
+			System.out.println(constant.loaded);
 		} else if (args[0].contains("c")) {
-			System.out.println("Loading data ...");
+			System.out.println(constant.loading);
 			String textFile = readInput();
 			char students[] = textFile.toCharArray();
 			int count = 1;
@@ -91,7 +93,7 @@ public class StudentList {
 			}
 			System.out.println(count + " word(s) found ");
 
-			System.out.println("Data Loaded.");
+			System.out.println(constant.loaded);
 		}
 	}
 }
