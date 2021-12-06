@@ -68,12 +68,11 @@ public class StudentList {
 			System.out.println(constant.loading);
 
 			String students[] = readInput().split(",");
-			boolean done = false;
 			String searchText = args[0].substring(1);
-			for (int idx = 0; idx < students.length && !done; idx++) {
+			for (int idx = 0; idx < students.length; idx++) {
 				if (students[idx].trim().equals(searchText)) {
 					System.out.println("We found it!");
-					done = true;
+					break;
 				}
 			}
 
