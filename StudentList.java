@@ -33,6 +33,8 @@ public class StudentList {
 
 		if (!args[0].equals("a") && !args[0].equals("r") && !args[0].contains("+") && !args[0].contains("?")
 				&& !args[0].contains("c")) {
+
+			System.out.println("Invalid argument. Run again.");
 			System.exit(0);
 		}
 
