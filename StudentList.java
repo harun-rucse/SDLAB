@@ -27,6 +27,7 @@ public class StudentList {
 	}
 
 	public static void main(String[] args) {
+		Constants constant = new Constants();
 
 		// Check arguments
 
